@@ -21,7 +21,6 @@ class User extends Model<InferAttributes<User>, InferCreationAttributes<User>>{
   declare roles: 'client' | 'admin';
 }
 
-
 User.init(
   {
      id: {
