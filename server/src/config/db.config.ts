@@ -3,28 +3,30 @@ import fs from 'fs';
 import dotenv from 'dotenv';
 dotenv.config();
 
-const sequelize = new Sequelize( process.env.DB_NAME as string, process.env.DB_USER as string, process.env.DB_PASSWORD as string, {
-  host: process.env.DB_HOST,
-  dialect: 'mysql',
-  dialectOptions: {
-    ssl: {
-      require: true,
-      ca : fs.readFileSync(process.env.DB_SSL_CA_PATH as string).toString()
-    }
-  },
-  pool: {
-    max: 10,
-    min: 0,
-    acquire: 30000,
-    idle: 10000
+const sequelize = new Sequelize( 
+  process.env.DB_NAME as string, 
+  process.env.DB_USER as string, 
+  process.env.DB_PASSWORD as string, 
+  {
+    host: process.env.DB_HOST,
+    port: Number(process.env.DB_PORT),
+    dialect: 'mysql',
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: true,
+        ca : fs.readFileSync(process.env.DB_SSL_CA_PATH as string).toString(),
+      },
+    },
+    pool: {
+      max: 5,
+      min: 0,
+      acquire: 60000,
+      idle: 10000
+    },
+  logging: false,
   }
-});
+);
 
-try {
-  await sequelize.authenticate();
-  console.log('Connection has been established successfully.');
-} catch (error) {
-  console.error('Unable to connect to the database:', error);
-}
 
 export default sequelize;

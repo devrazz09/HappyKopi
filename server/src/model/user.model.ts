@@ -1,11 +1,10 @@
 
-import sequelize from "../config/db.config";
-import { 
+import sequelize from "../config/db.config.ts";
+import { Model, DataTypes } from "sequelize";
+import type { 
   InferAttributes, 
   InferCreationAttributes, 
-  CreationOptional, 
-  Model,
-  DataTypes
+  CreationOptional 
 } from "sequelize";
 
 
@@ -23,7 +22,7 @@ class User extends Model<InferAttributes<User>, InferCreationAttributes<User>>{
 
 User.init(
   {
-     id: {
+    id: {
     type: DataTypes.INTEGER.UNSIGNED,
     allowNull: false,
     primaryKey: true,
@@ -74,3 +73,5 @@ User.init(
     tableName: 'users'
   }
 )
+
+export default User;
