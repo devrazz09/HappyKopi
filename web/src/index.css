@@ -3,7 +3,7 @@
 
 @font-face {
   font-family: Aspekta;
-  src: url('../assets/fonts/Aspekta-Regular.otf') format('opentype');
+  src: url('./assets/fonts/Aspekta.otf') format('opentype');
 }
 
 @theme {
@@ -11,6 +11,6 @@
   --color-secondary: #262626;
   --color-background: #F1F2F6;
   --color-componentBG: #FFFFFF;
-
+  --color-textSecondary: #525252;
   --font-primary: 'Aspekta', sans-serif;
 }
