@@ -8,7 +8,7 @@ import type {
 } from "sequelize";
 
 
-class User extends Model<InferAttributes<User>, InferCreationAttributes<User>>{
+class User extends Model<InferAttributes<User>, InferCreationAttributes<User>> {
   declare id: CreationOptional<number>;
   declare profilePicture: string | null;
   declare firstName: string;
