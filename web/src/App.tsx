@@ -1,7 +1,7 @@
-import LoginPage from "./pages/auth/Login"
+import Layout from "./pages/client/_layout"
 function App() {
   return (
-    <LoginPage /> 
+    <Layout /> 
   )
 }
 
