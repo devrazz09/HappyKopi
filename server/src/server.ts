@@ -1,12 +1,10 @@
 import express, { type Request, type Response } from 'express';
-import db from './model/index.ts';
+import db from './model/index';
 import dotenv from 'dotenv';
+import app from './app';
 dotenv.config();
-const app = express();
-const port = process.env.PORT || 3000;
-app.use(express.json());
 
-// Test route to check database connection
+const port = process.env.PORT || 3000;
 (async () => {
   try {
     await db.sequelize.authenticate();

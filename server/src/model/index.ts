@@ -1,10 +1,10 @@
-import sequelize from "../config/db.config.ts";
-import User from "./user.model.ts";
-import ProductType from "./productTypes.model.ts";
-import MilkTea from "./milktea.model.ts";
-import IcedCoffee from "./icedCoffee.model.ts";
-import Frapuccino from "./frapuccino.model.ts";
-import FruitTea from "./fruitTea.model.ts";
+import sequelize from "../config/db.config";
+import User from "./user.model";
+import ProductType from "./productTypes.model";
+import MilkTea from "./milktea.model";
+import IcedCoffee from "./icedCoffee.model";
+import Frapuccino from "./frapuccino.model";
+import FruitTea from "./fruitTea.model";
 const db = { sequelize, User, ProductType, MilkTea, IcedCoffee, Frapuccino, FruitTea };
 
 export default db;

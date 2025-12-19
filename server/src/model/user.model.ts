@@ -1,5 +1,5 @@
 
-import sequelize from "../config/db.config.ts";
+import sequelize from "../config/db.config";
 import { Model, DataTypes } from "sequelize";
 import type { 
   InferAttributes, 
