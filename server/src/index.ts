@@ -1,7 +1,6 @@
 import express, { type Request, type Response } from 'express';
 import db from './model/index.ts';
 import dotenv from 'dotenv';
-
 dotenv.config();
 const app = express();
 const port = process.env.PORT || 3000;
